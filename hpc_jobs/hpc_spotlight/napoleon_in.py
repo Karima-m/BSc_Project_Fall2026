@@ -1,15 +1,16 @@
+# Imports
 import pandas as pd
 import os
 import sys
+
+sys.path.append(os.path.abspath("src"))
+from modules.spotlight_weight_source import SpotlightWeightSource
 
 
 # Load data
 source_biographies = pd.read_csv('data/source_biographies.csv')
 napoleon_links = pd.read_csv('data/napoleon_links.csv')
 source_names = pd.read_csv('data/napoleon_source_names.csv')   
-
-sys.path.append(os.path.abspath("src"))
-from modules.spotlight_weight_source import SpotlightWeightSource
 
 # QID -> title 
 titles = dict(zip(source_names["wikidata_id"], source_names["page_title"]))

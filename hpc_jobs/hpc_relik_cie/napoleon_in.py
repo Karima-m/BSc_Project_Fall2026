@@ -1,9 +1,12 @@
+# Imports
 from relik import Relik
 from relik.inference.data.objects import RelikOutput
 import glob
 import os
 import pandas as pd
 
+
+# Load model
 relik = Relik.from_pretrained("relik-ie/relik-cie-small", device='cuda')
 
 # Read biographies
@@ -16,9 +19,8 @@ for file_name in glob.glob("data/text_files/*"):
     with open(file_name, 'r', encoding='utf-8') as file:
         text_files[person] = file.read()
 
+# Get relik output for each biography
 rows = []
-
-#print('INCOMING EDGES')
 
 for name, bio in text_files.items():
 
@@ -30,6 +32,7 @@ for name, bio in text_files.items():
         
         #print(span.text, "->", span.label)
 
+        # Only where span-label is Napoleon
         if span.label == 'Napoleon':
             napoleon_count += 1
 

@@ -1,13 +1,18 @@
+# Imports
 from relik import Relik
 from relik.inference.data.objects import RelikOutput
 import glob
 import os
 import pandas as pd
 
+
+# Load model
 relik = Relik.from_pretrained("relik-ie/relik-cie-small", device='cuda')
 
+# Read df with page title and ID 
 target_names = pd.read_csv("data/napoleon_target_names.csv")
 
+# Save list with page titles and ID for each target
 name_list = target_names['page_title'].values.tolist()
 id_list = target_names['wikidata_id'].values.tolist()
 
@@ -15,12 +20,11 @@ id_list = target_names['wikidata_id'].values.tolist()
 with open('data/text_napoleon/Napoleon_en.txt', 'r') as file:
     napoleon_bio = file.read()
 
+# Get relik output
 relik_out: RelikOutput = relik(napoleon_bio)
 
 # Count how many times each target is mentioned
 rows = []
-
-#print('OUTGOING EDGES')
 
 for name, wikidata_id in zip(name_list, id_list):
 
@@ -30,6 +34,7 @@ for name, wikidata_id in zip(name_list, id_list):
 
         #print(span.text, "->", span.label)
 
+        # Add weight if span-label matches a page title
         if span.label == name:
             name_count += 1
 
