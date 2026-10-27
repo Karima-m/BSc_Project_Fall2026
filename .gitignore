@@ -1,0 +1,6 @@
+logs/
+checkpoints/
+__pycache__/
+data/SpotlightWeightSource_0102_0505_fullmatch_corrected.csv
+*.db
+*.gz
