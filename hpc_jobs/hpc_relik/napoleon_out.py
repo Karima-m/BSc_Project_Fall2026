@@ -5,6 +5,12 @@ import glob
 import os
 import pandas as pd
 
+# Parameters
+top_ks = [50, 100, 200]
+window_sizes = [32, 64, 128]
+
+# folder for results
+os.makedirs('results', exist_ok= True)
 
 # Load model
 relik = Relik.from_pretrained("sapienzanlp/relik-entity-linking-small", device='cuda')
@@ -17,27 +23,40 @@ name_list = target_names['page_title'].values.tolist()
 id_list = target_names['wikidata_id'].values.tolist()
 
 # Read Napoleon's biography
-with open('data/text_napoleon/Napoleon_en.txt', 'r') as file:
+with open('data/text_napoleon/Napoleon_en.txt', 'r', encoding='utf-8') as file:
     napoleon_bio = file.read()
 
-# Get relik output
-relik_out: RelikOutput = relik(napoleon_bio)
 
-# Count how many times each target is mentioned
-rows = []
 
-for name, wikidata_id in zip(name_list, id_list):
+# run combinations 
+for top_k in top_ks:
+    for window_size in window_sizes:
 
-    name_count = 0
+        window_stride = window_size // 2
 
-    for span in relik_out.spans:
+        # Get relik output
+        relik_out: RelikOutput = relik(
+            napoleon_bio,
+            top_k=top_k,
+            window_size=window_size,
+            window_stride=window_stride                   
+            )
 
-        # Add weight if span-label matches a page title
-        if span.label == name:
-            name_count += 1
+        # Count how many times each target is mentioned
+        rows = []
 
-    rows.append({"source_ID": "Q517", "target_ID": wikidata_id, "relik_weight": name_count})
+        for name, wikidata_id in zip(name_list, id_list):
 
-name_df = pd.DataFrame(rows, columns=["source_ID", "target_ID", "relik_weight"])
+            name_count = 0
 
-name_df.to_csv('relik_napoleon_weights.csv', index=False)
+            for span in relik_out.spans:
+
+                # Add weight if span-label matches a page title
+                if span.label == name:
+                    name_count += 1
+
+            rows.append({"source_ID": "Q517", "target_ID": wikidata_id, "relik_weight": name_count})
+
+        name_df = pd.DataFrame(rows, columns=["source_ID", "target_ID", "relik_weight"])
+
+        name_df.to_csv(f"results/relik_out_k{top_k}_w{window_size}_s{window_stride}.csv", index=False)
