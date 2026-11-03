@@ -1,0 +1,76 @@
+Baron Gaspard Clair François Marie Riche de Prony (22 July 1755 – 29 July 1839) was a French mathematician and engineer, who worked on hydraulics. He was born at Chamelet, Beaujolais, France and died in Asnières-sur-Seine, France.
+
+
+Education and early works
+He was Engineer-in-Chief of the École nationale des ponts et chaussées [National school of bridges and roads], a technical school in Paris.
+
+
+The trigonometric and logarithmic tables of the cadastre
+In 1791, Prony embarked on the task of producing logarithmic and trigonometric tables for the French Cadastre (geographic survey). The effort was sanctioned by the French National Assembly, which, after the French Revolution wanted to bring uniformity to the multiple measurements and standards used throughout the nation.  In particular, his tables were intended for precise land surveys, as part of a greater cadastre effort. The tables were vast, calculating logarithms from 1 to 200,000, with values  calculated to between fourteen and twenty-nine decimal places, (which Prony recognized was excessively precise).
+Inspired by Adam Smith's Wealth of Nations, Prony divided up the labor into three levels, bragging that he "could manufacture logarithms as easily as one manufactures pins."
+The first level consisted of five or six high-ranking mathematicians with sophisticated analytical skills, including Adrien-Marie Legendre and Lazare Carnot. This group chose the analytical formulas most suited to evaluation by numerical methods, and specified the number of decimals and the numerical range the tables were to cover. Specifically, they selected the mathematical expressions for computation and verification, and determined the starting values for numbers or angles, as well as the number of significant figures used in each table.
+The second group of lesser mathematicians, seven or eight in number, were known as the "planners" and had previous experience as computers in the cadastre, mainly with experience having to do with practical mathematics. The group specified which values and higher-order differences to compute, and they set up a working table by arranging the columns and initial rows of entries, along with instructions for completing the remaining entries on the page. The planners combined analytical and computational skills, with this group calculating the pivotal values using the formulas provided and the sets of starting differences. They also prepared
+templates for the human computers, and the first worked row of calculations, as well as the instructions for the computers to carry the sequence to completion. Finally, this group was tasked with verifying all the calculations made by the human computers. Since recalculating every value would have nullified the use of the lowest level computers since their tasks would have been completely repeated, the planners used a method knows as "differencing," where they compared adjacent values in the tables, checking for any discrepancies. Prony's design of the tables was like an inverted version of the usual procedure. Instead of deriving needing to perform complicated calculations to derive values, f(x), for all the inputs, x, exact values of f(x) were first calculated for selected starting points using a known formula. Then, consecutive differences were calculated between the f(x) and its subsequent differences between the differences until they have reached a constant number. For example, for a f(x) = x^2, the usual way is to calculate f(x) for all x for the table (x = 1, 2, 3, 4, 5). However, the formulas were too complex for the hairdressers. Thus, more learned group would first calculate the final f(x) = 1, 4, 9, 16, 25, and then take the difference between each output: 3, 5, 7, 9. Since the difference is still not a constant number, you would take another difference between those differences = 2, 2, 2. This arrived at a constant difference. Now, for f(6), we would work backwards and add the differences: 2 + 9 + 25 = 36 to arrive at the correct output. Because the work performed is done by hairdressers, this allowed them to complete the tables without extra training.
+The third group consisted of sixty to ninety human computers. These had no more than a rudimentary knowledge of arithmetic and carried out the most laborious and repetitive part of the process. Many were out-of-work hairdressers, because, with the guillotining of the aristocracy, the hairdressing trade, which had tended the elaborate hairstyles of the elite, was in recession. Due to their lack of experience, they only had to calculate simple problems of addition and subtraction. In addition, this group did not operate under a factory-like model, instead opting to work from home, sending their results and receiving their new tasks from the planners in a non-centralized manner. These calculators could produce an average of around 700 calculations a day.  Specifically, the second group has laid out the required differences in page columns for the hairdressers to compute, following the instructions in the paragraph. The calculations continued through the column of differences prepared by that section, which yielded almost uniform figures in each row, and then the process stopped.
+
+
+Importance for mapping
+The tables developed by Prony's team were doubly important for French metric cartography. Firstly, at the time, sailors needed logarithms for math pertaining to spherical geometry, because this was needed to quickly and accurately position themselves to guarantee safe and efficient travel across the seas. However, the implementation of the new French Revolutionary metric system would make the old logarithmic tables would be obsolete, and French sailors would be unwilling to switch measurement systems since it would have rendered positional calculations significantly more difficult and less precise. Thus, Prony, by making new logarithmic tables for the new metric system, would have facilitated the transition, enabling sailors to adopt the system. The second key element was that trigonometric values were needed for cadastral measures. Thus, for accurate mapping of the French territory and its subdivisions all the way down to the lowest levels of property ownership, Prony needed to complete the trigonometric tables. These were both seen as crucial for Revolutionary pride considering the importance of naval prowess at the time and the need for administrative efficiency.
+
+
+Enlightenment calculations
+According to Prony, the project was to leave "nothing to desire with respect to exactitude" and to be "the most vast... monument to calculation ever executed or even conceived." The tables were not used for their original purpose of bringing consistent standards for measurement, as the entire cadastre project saw delays in establishing both new measurement units as well as budget cuts. In particular, these tables, which were designed for the decimal division of circles and time, turned out to be obsolete after the French had changed their measurement system. Moreover, there was no practical use for the full extent of Prony's calculation's accuracy. Hence, these tables became more of artifacts and monuments to Enlightenment rather than objects of practical use.
+
+
+Influence on the meaning of calculation
+By the turn of the 19th century, there was a shift in the meaning of calculation. The talented mathematicians and other intellectuals who produced creative and abstract ideas were regarded separately from those who were able to perform tedious and repetitive computations. Before the 19th century, calculation was regarded as a task for the academics, while afterwards, calculations were associated with unskilled laborers. This was accompanied by a shift in gender roles as well, as women, who were usually underrepresented in mathematics at the time, were hired to perform extensive computations for the tables as well as other computational government projects until the end of World War II. This shift in the interpretation of calculation was largely due to Prony's calculation project during the French Revolution. Calculation had not become mechanical, but were the examples of mental processes. This project was able to unite people from many different walks of life as well as mathematical abilities (in the traditional sense) and hence changed the meaning of calculation from intelligence into unskilled labor. Historians have commented: "the replacement of human intelligence by machine intelligence was becoming more apparent. The machinery of the factory and calculation embody the intelligence of theory and terminated the importance of worker intelligence." Others commented that "it opened the possibility of building the same kind of machine that has this intelligence."
+
+
+Mechanizing calculation
+Prony was able to have artisans (workers who excelled in mechanical arts that require intelligence) work along with mathematicians to perform the calculations. Prony noted a few interesting observations about this new dynamic. First, it was fascinating to see so many different people work on the same problem. Second, he realized that even the ones with the least intellectual ability were able to perform these computations with astonishingly few errors. Prony saw this entire system as a collection of human computers working together as a whole - a machine governed by hierarchical principles of the division of labor. In fact, Prony may have begun to amend his notion of intelligence, which he began to use to evaluate the system as a whole, rather than evaluating the intelligence of its constituents. Prony specifically remarked how the ones with the most limited intelligence that operated automatically, were able to perform with the fewest errors. The essence of intelligence was considered to be the ability to complete calculations, which put into question what is considered to be intelligence for Prony.
+
+
+Influence on Charles Babbage
+Charles Babbage, credited with inventing the first mechanical computer, was indirectly aided by Prony's take on Smith's division of labor. Babbage specifically gave two accounts of how his interests began: one in the mechanical calculation of table one from 1812 and the other from 1819. Babbage had conceived the idea of mechanical calculation before he learned about de Prony's tables. It is not documented that Babbage had met de Prony or communicated with him. However, Babbage did examine the Observatoire set of tables while visiting Paris in 1826, where he had copies made of some of de Prony's writings on the project. Babbage agreed with the three tiered system, but Babbage was seized by the idea that the labours of the unskilled computers could be taken over completely by machinery. This would keep only the two highest groups human, and also would transform the role of the planners into a maintenance group for the machine. Prony's work showed that a division of labor has facilitated the proliferation of complicated tables and eliminated calculation errors, which Babbage later held that this mechanization of calculation could replace the third group of computers entirely. In a pamphlet of 1822, Babbage accounted de Prony's project and remarked how the mechanical methods would speed up calculation.
+
+
+Failure of the tables to be popularly implemented
+The French Revolutionary government passed the law that made the metric system the official measurement system in 1795, but they did not include the decimal angle measurement, making much of Prony's work worthless. This also meant that the funding needed for Prony to finish and publish his tables dried up. Prony continued his work until 1800, but because his publisher went bankrupt, the work was not seen by the public eye until the first excerpt of the table was published a century later. Specifically, there was a completion and cost problem, where the publishers Firmin Didot, charged the responsibilities of printing, would result in a cost of 80,000 francs. Additionally, the financial crises in France emerged, leading to the stoppage of printing. The Napoleonic government abandoned the project, before abandoning the metric system entirely in 1812 dooming Prony's work. The British government offered financial support through the offices of physician Sir Charles Blagden, but was stopped after Blagden's death. Today, both sets of the manuscript tables are still in Paris, one in the Paris Observatoire and the other in the library of Blbliotheque de l'Institut. Each set composed of 19 volumes, and the first 8 containing logarithms of numbers from 1 to 200,000 calculated to 14 decimal places.
+
+
+Prony's brake
+
+One of Prony's important scientific inventions was the "brake" which he invented in 1821 to measure the torque produced by an engine.
+He also was first to propose using a reversible pendulum to measure gravity, which was independently invented in 1817 by Henry Kater and became known as the Kater's pendulum.
+
+
+Prony's estimation method
+Prony created a method of converting sinusoidal and exponential curves into a systems of linear equations. Prony estimation is used extensively in signal processing and finite element modelling of non linear materials.
+
+
+Engineering projects
+Prony was employed by Napoleon to superintend the engineering operations for protecting the province of Ferrara against the inundations of the Po and for draining and improving the Pontine Marshes. After the Restoration he was likewise engaged in regulating the course of the Rhône, and in several other important works.
+
+
+Distinctions
+Prony was a member, and eventually president, of the French Academy of Sciences.  He was also elected a foreign member of the Royal Swedish Academy of Sciences in 1810.  His name is one of the 72 names inscribed on the Eiffel Tower. A street, Rue de Prony, in the 17th arrondissement of Paris is named after him.
+
+
+See also
+Prony equation
+Charles Storer Storrow
+
+
+References
+
+
+Notes
+
+
+Citations
+
+
+External links
+ Media related to Gaspard de Prony at Wikimedia Commons
+O'Connor, John J.; Robertson, Edmund F., "Gaspard de Prony", MacTutor History of Mathematics Archive, University of St Andrews
+Prony Estimation
