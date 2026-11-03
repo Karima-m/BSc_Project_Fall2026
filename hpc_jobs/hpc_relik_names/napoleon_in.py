@@ -30,6 +30,6 @@ for name, bio in text_files.items():
         if span.label == 'Napoleon':
             napoleon_count += 1
 
-    rows.append({'name': name, 'relik_weight': napoleon_count})
+    rows.append({'name': name, 'relik_names_weight': napoleon_count})
 
     pd.DataFrame(rows).to_csv("relik_names_weights.csv", index=False)
