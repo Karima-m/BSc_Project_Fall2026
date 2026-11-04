@@ -35,8 +35,8 @@ for pattern, wikidata_id in zip(patterns, id_list):
         if pattern.fullmatch(span.label):
             name_count += 1
 
-    rows.append({"source_ID": "Q517", "target_ID": wikidata_id, "relik_weight": name_count})
+    rows.append({"source_ID": "Q517", "target_ID": wikidata_id, "relik_names_weight": name_count})
 
-name_df = pd.DataFrame(rows, columns=["source_ID", "target_ID", "relik_weight"])
+name_df = pd.DataFrame(rows, columns=["source_ID", "target_ID", "relik_names_weight"])
 
 name_df.to_csv('relik_napoleon_names_weights.csv', index=False)
