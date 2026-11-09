@@ -20,4 +20,10 @@ weights_df = source.assign_weights(
     title_to_id_map={"en": {"Napoleon": "Q517"}},
 )
 
+weights_df = weights_df.rename(columns={
+    "source_wikidata_id": "source_ID",
+    "target_wikidata_id": "target_ID",
+    "weight": "spotlight_weight",
+})
+
 weights_df.to_csv('spotlight_weights.csv', index=False)
