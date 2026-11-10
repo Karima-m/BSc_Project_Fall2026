@@ -12,9 +12,16 @@ target_names = pd.read_csv("data/napoleon_target_names.csv")
 name_list = target_names['page_title'].values.tolist()
 id_list = target_names['wikidata_id'].values.tolist()
 
-# Make pattern for identifaction of wikipedia title vs Relik's labels 
-patterns = [re.compile(re.escape(name) + r'(?: of [A-Z][\w\s\-]*| \([^)]*\))?')
+# Make pattern for identifaction of wikipedia title vs Relik's labels
+# registers hyphens and spaces 
+SEP = r'[\s\-‐–]+' 
+
+# makes case insensitive and allow optional ending  
+patterns = [re.compile(SEP.join(re.escape(word) for word in re.split(SEP, name.strip()))
+                       + r'(?: of [A-Z][\w\s\-]*| \([^)]*\))?',
+                       re.IGNORECASE)
             for name in name_list]
+
 
 # Read Napoleon's biography
 with open('data/text_napoleon/Napoleon_en.txt', 'r') as file:
