@@ -4,6 +4,7 @@ from relik.inference.data.objects import RelikOutput
 import glob
 import os
 import pandas as pd
+import re
 
 
 # Load model
@@ -16,6 +17,16 @@ target_names = pd.read_csv("data/napoleon_target_names.csv")
 name_list = target_names['page_title'].values.tolist()
 id_list = target_names['wikidata_id'].values.tolist()
 
+# Make pattern for identifaction of wikipedia title vs Relik's labels
+# registers hyphens and spaces 
+SEP = r'[\s\-‐–]+' 
+
+# makes case insensitive and allow optional ending  
+patterns = [re.compile(SEP.join(re.escape(word) for word in re.split(SEP, name.strip()))
+                       + r'(?: of [A-Z][\w\-]*)?',
+                       re.IGNORECASE)
+            for name in name_list]
+
 # Read Napoleon's biography
 with open('data/text_napoleon/Napoleon_en.txt', 'r') as file:
     napoleon_bio = file.read()
@@ -26,7 +37,7 @@ relik_out: RelikOutput = relik(napoleon_bio)
 # Count how many times each target is mentioned
 rows = []
 
-for name, wikidata_id in zip(name_list, id_list):
+for pattern, wikidata_id in zip(patterns, id_list):
 
     name_count = 0
 
@@ -34,8 +45,8 @@ for name, wikidata_id in zip(name_list, id_list):
 
         #print(span.text, "->", span.label)
 
-        # Add weight if span-label matches a page title
-        if span.label == name:
+        # Add weight if page title and span label are the same or title "... of ..."
+        if pattern.fullmatch(span.label):
             name_count += 1
 
     rows.append({"source_ID": "Q517", "target_ID": wikidata_id, "relik_cie_weight": name_count})

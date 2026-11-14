@@ -18,7 +18,7 @@ SEP = r'[\s\-‐–]+'
 
 # makes case insensitive and allow optional ending  
 patterns = [re.compile(SEP.join(re.escape(word) for word in re.split(SEP, name.strip()))
-                       + r'(?: of [A-Z][\w\s\-]*| \([^)]*\))?',
+                       + r'(?: of [A-Z][\w\-]*)?',
                        re.IGNORECASE)
             for name in name_list]
 
