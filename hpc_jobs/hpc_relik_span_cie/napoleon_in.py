@@ -5,6 +5,7 @@ import glob
 import os
 import pandas as pd
 
+# Load model
 relik = Relik.from_pretrained("relik-ie/relik-cie-small", device='cuda')
 
 # Read biographies
@@ -38,5 +39,5 @@ for name, bio in text_files.items():
  
     rows.append({'name': name, 'relik_weight': napoleon_count})
  
-pd.DataFrame(rows).to_csv("relik_in.csv", index=False)
+pd.DataFrame(rows).to_csv("relik_in_cie.csv", index=False)
 pd.DataFrame(all_spans).to_csv("relik_in_cie_spans.csv", index=False)

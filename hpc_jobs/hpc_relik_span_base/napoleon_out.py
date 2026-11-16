@@ -52,4 +52,4 @@ for pattern, wikidata_id in zip(patterns, id_list):
     rows.append({"source_ID": "Q517", "target_ID": wikidata_id, "relik_weight": name_count})
 
 name_df = pd.DataFrame(rows, columns=["source_ID", "target_ID", "relik_weight"])
-name_df.to_csv("relik_out_base_spans.csv", index=False)
+name_df.to_csv("relik_out_base.csv", index=False)

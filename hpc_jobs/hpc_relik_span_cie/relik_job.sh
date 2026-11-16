@@ -16,7 +16,7 @@ echo "Running on $(hostname):"
 #pip install relik
 
 # Move to folder
-cd ~/hpc_relik_span/
+cd ~/hpc_relik_span_cie/
 
 python napoleon_in.py
 python napoleon_out.py
